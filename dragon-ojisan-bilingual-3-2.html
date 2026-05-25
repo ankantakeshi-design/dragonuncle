@@ -1,0 +1,1703 @@
+<!DOCTYPE html>
+<html lang="ja" id="html-root">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<!-- ① 基本SEO -->
+<title id="page-title">龍のおじさん🐉 | のんびり話せる龍神チャット</title>
+<meta name="description" content="博多弁をしゃべる龍神おぢさんと、のんびりひとり言みたいな会話を楽しめる無料チャットアプリ。疲れた日もお茶でも飲みながらどうぞ🍵" id="meta-description">
+<meta name="keywords" content="龍のおじさん,ドラゴンおぢさん,龍神,チャット,癒し,博多弁,ひとり言,AI会話,無料,スマホ">
+<meta name="author" content="Takechan">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://dragonuncle.pages.dev/">
+
+<!-- ② 読みやすさ・モバイル最適化 -->
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#ffcc00">
+<meta name="color-scheme" content="light">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- ③ SNS拡散向け OGP -->
+<meta property="og:title" content="龍のおじさん🐉 疲れた日はお茶でも飲みながらどうぞ" id="og-title">
+<meta property="og:description" content="博多弁をしゃべる龍神おぢさんとのんびり話せる無料チャット。ひとり言みたいな会話が、なんか落ち着く🍵" id="og-description">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dragonuncle.pages.dev/">
+<meta property="og:image" content="https://dragonuncle.pages.dev/dragon.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="金色の龍神おぢさんのイラスト">
+<meta property="og:locale" content="ja_JP" id="og-locale">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:site_name" content="龍のおじさん" id="og-sitename">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@dragonuncle">
+<meta name="twitter:title" content="龍のおじさん🐉 疲れた日はお茶でも飲みながらどうぞ" id="tw-title">
+<meta name="twitter:description" content="博多弁をしゃべる龍神おぢさんとのんびり話せる無料チャット。ひとり言みたいな会話が、なんか落ち着く🍵" id="tw-description">
+<meta name="twitter:image" content="https://dragonuncle.pages.dev/dragon.jpg">
+<meta name="twitter:image:alt" content="金色の龍神おぢさんのイラスト">
+
+<!-- ④ AI検索・構造化データ向け -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "龍のおじさん",
+  "alternateName": "Dragon Uncle",
+  "url": "https://dragonuncle.pages.dev/",
+  "description": "博多弁をしゃべる龍神おぢさんと、のんびりひとり言みたいな会話を楽しめる無料チャットアプリ。日本語・英語対応。",
+  "applicationCategory": "EntertainmentApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "JPY"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Takechan"
+  },
+  "inLanguage": ["ja", "en"],
+  "image": "https://dragonuncle.pages.dev/dragon.jpg"
+}
+</script>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YL1VVC3FFB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YL1VVC3FFB');
+</script>
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" sizes="32x32" href="dr192.jpg">
+<link rel="icon" type="image/png" sizes="16x16" href="dr192.jpg">
+<link rel="apple-touch-icon" sizes="180x180" href="dr180.jpg">
+
+<!-- PWA -->
+<link rel="manifest" href="manifest.json" id="manifest-link">
+<script>
+  (function() {
+    var lang = navigator.language || navigator.userLanguage || '';
+    if (!lang.startsWith('ja')) {
+      var el = document.getElementById('manifest-link');
+      if (el) el.setAttribute('href', 'manifest-en.json');
+    }
+  })();
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700;800;900&family=Noto+Sans+JP:wght@300;400;700&family=Dela+Gothic+One&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --ink: #1a0a2e;
+    --paper: #fff8f0;
+    --gold: #ffcc00;
+    --gold2: #ffaa55;
+    --mist: rgba(255,204,0,0.08);
+    --red: #ff6b6b;
+    --accent: #00cfff;
+  }
+
+  body {
+    background: linear-gradient(160deg, #fff3b0 0%, #ffe066 30%, #ffd6a5 65%, #ffe8cc 100%);
+    font-family: 'Noto Sans JP', sans-serif;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  /* 背景の雲みたいなエフェクト */
+  .bg-mist {
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 40% at 20% 80%, rgba(255,140,0,0.18) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 60% at 80% 20%, rgba(0,207,255,0.13) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 50% at 50% 50%, rgba(255,220,100,0.10) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  #title-area {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 480px;
+    padding: 44px 20px 2px;
+    text-align: center;
+  }
+
+  #title-main .title-emoji {
+    -webkit-text-fill-color: initial;
+    -webkit-background-clip: initial;
+    background: none;
+    background-clip: initial;
+  }
+
+  #title-main {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: 900;
+    font-size: 20px;
+    background: linear-gradient(90deg, #ff6b35, #ffcc00, #00cfff, #ffcc00, #ff6b35);
+    background-size: 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: titleShimmer 3s linear infinite;
+    line-height: 1.2;
+  }
+
+  #title-sub {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: 700;
+    font-size: clamp(10px, 3.2vw, 15px);
+    color: rgba(200,100,0,0.85);
+    letter-spacing: 0.02em;
+    margin-top: 1px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  @keyframes titleShimmer {
+    0%   { background-position: 0% }
+    100% { background-position: 200% }
+  }
+
+
+  #dragon-stage {
+    position: relative;
+    width: 80%;
+    max-width: 360px;
+    height: 200px;
+    flex-shrink: 0;
+    z-index: 1;
+    overflow: hidden;
+    margin: 0 auto;
+    border-radius: 12px;
+  }
+
+  /* SVG龍 */
+  #dragon-video {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+
+  /* 雲のパーティクル */
+  .cloud-particle {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,168,76,0.3), transparent);
+    animation: cloudDrift linear infinite;
+    pointer-events: none;
+  }
+  @keyframes cloudDrift {
+    0%   { transform: translateY(0) scale(1); opacity: 0; }
+    20%  { opacity: 1; }
+    80%  { opacity: 0.5; }
+    100% { transform: translateY(-120px) scale(1.5); opacity: 0; }
+  }
+
+  /* 会話エリア */
+  #chat-area {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 480px;
+    flex: none;
+    display: flex;
+    flex-direction: column;
+    padding: 0 12px 0;
+  }
+
+  /* ボタンエリア固定 */
+  #buttons-wrapper {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 480px;
+    padding: 4px 12px 40px;
+    background: transparent;
+    flex-shrink: 0;
+  }
+
+  /* 龍の発言 */
+  #dragon-speech {
+    margin-top: 8px;
+    background: rgba(255,255,255,0.55);
+    border: 2px solid rgba(255,160,0,0.45);
+    border-radius: 16px;
+    padding: 20px 20px;
+    margin-bottom: 12px;
+    flex: none;
+    min-height: 110px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  #speech-text {
+    color: #3a2200;
+    font-size: 15px;
+    line-height: 1.7;
+    letter-spacing: 0.03em;
+    display: block;
+    width: 100%;
+    word-break: break-all;
+    white-space: normal;
+  }
+
+  /* タイピングアニメ */
+  #speech-text.typing::after {
+    content: '▌';
+    animation: blink 0.7s infinite;
+    color: #ff8c00;
+  }
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  /* ユーザーの最後の返答 */
+  #user-reply-area {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 16px;
+    min-height: 32px;
+  }
+
+  #user-last-reply {
+    background: rgba(0,180,255,0.18);
+    border: 1px solid rgba(0,180,255,0.45);
+    border-radius: 16px 16px 4px 16px;
+    padding: 8px 16px;
+    color: #1a3a50;
+    font-size: 13px;
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+  #user-last-reply.show { opacity: 1; }
+
+  /* ボタンエリア */
+  #buttons-area {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+  }
+
+  .reply-btn {
+    background: rgba(255,255,255,0.6);
+    border: 2px solid rgba(255,140,0,0.5);
+    border-radius: 12px;
+    color: #3a2200;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 14px;
+    padding: 14px 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    letter-spacing: 0.05em;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .reply-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,200,0,0.25), transparent);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  .reply-btn:hover::before { opacity: 1; }
+  .reply-btn:hover {
+    border-color: rgba(255,140,0,0.9);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(255,160,0,0.3);
+  }
+
+  .reply-btn:active {
+    transform: translateY(0) scale(0.97);
+  }
+
+  .reply-btn.pressed {
+    background: rgba(255,220,80,0.4);
+    border-color: #ff8c00;
+  }
+
+  #footer-text {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: 900;
+    font-size: 18px;
+    color: rgba(160,80,0,0.75);
+    text-align: center;
+    margin-top: 12px;
+    letter-spacing: 0.05em;
+  }
+
+  #nobibi-text {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: 900;
+    font-size: 17px;
+    color: rgba(30,120,60,0.88);
+    text-align: center;
+    margin-top: 10px;
+    letter-spacing: 0.03em;
+    line-height: 1.7;
+  }
+  .deco-line {
+    width: 100%;
+    max-width: 480px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(201,168,76,0.3), transparent);
+    position: relative;
+    z-index: 2;
+    margin-bottom: 4px;
+  }
+
+  /* コピーライト */
+  #copyright {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 480px;
+    text-align: right;
+    padding: 0 18px 24px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 11px;
+    color: rgba(120,80,0,0.5);
+    letter-spacing: 0.04em;
+  }
+
+  /* 言語切り替えボタン */
+  #lang-toggle {
+    position: fixed;
+    top: 10px;
+    right: 14px;
+    z-index: 200;
+    background: rgba(255,255,255,0.7);
+    border: 1.5px solid rgba(255,140,0,0.55);
+    border-radius: 999px;
+    padding: 5px 13px;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    color: #a05000;
+    cursor: pointer;
+    letter-spacing: 0.05em;
+    transition: all 0.2s;
+    backdrop-filter: blur(6px);
+  }
+  #lang-toggle:hover {
+    background: rgba(255,220,100,0.55);
+    border-color: rgba(255,140,0,0.9);
+  }
+</style>
+</head>
+<body>
+
+<div class="bg-mist"></div>
+<button id="lang-toggle" onclick="toggleLang()">🌐 EN</button>
+
+<div id="title-area">
+  <div id="title-main">ドラゴンおぢさんの<span class="title-emoji">🐉🥸</span></div>
+  <div id="title-sub">ほとんどひとり言 ꉂ🤣𐤔💬</div>
+</div>
+
+<!-- タップして開始オーバーレイ -->
+<div id="tap-overlay" onclick="startApp()" style="
+  position:fixed; inset:0; z-index:100;
+  display:none; flex-direction:column;
+  align-items:center; justify-content:center;
+  background:rgba(10,10,20,0.88);
+  cursor:pointer;
+  transition: opacity 0.4s;
+">
+  <div style="color:#c9a84c; font-family:'Noto Sans JP',sans-serif; font-size:20px; letter-spacing:0.15em;">タップしてはじめる</div>
+  <div style="color:rgba(201,168,76,0.4); font-size:12px; margin-top:10px; letter-spacing:0.1em;">龍、待機中</div>
+</div>
+
+<!-- 龍アニメーション -->
+<div id="dragon-stage">
+  <!-- 動画ループ -->
+  <video id="dragon-video" autoplay loop muted playsinline>
+    <source src="dragon.mp4" type="video/mp4">
+  </video>
+</div>
+
+<!-- 会話エリア -->
+<div id="chat-area">
+  <div id="dragon-speech">
+    <span id="speech-text"></span>
+  </div>
+</div>
+
+<div id="buttons-wrapper">
+  <div id="buttons-area">
+    <button class="reply-btn" onclick="userReply('はい')">はい</button>
+    <button class="reply-btn" onclick="userReply('いいえ')">いいえ</button>
+    <button class="reply-btn" onclick="userReply('そうだね')">そうだね</button>
+    <button class="reply-btn" onclick="userReply('そうでもなかろ 笑')">そうでもなかろ 笑</button>
+    <button class="reply-btn" onclick="userReply('わかるわぁ～')">わかるわぁ～</button>
+    <button class="reply-btn" onclick="userReply('へぇ～')">へぇ～</button>
+    <button class="reply-btn" onclick="userReply('バイバイ')">バイバイ</button>
+    <button class="reply-btn" onclick="userReply('またね')">またね</button>
+    <button class="reply-btn" onclick="userReply('おやすみ')">おやすみ</button>
+  </div>
+  <div id="nobibi-text">まあ、のんびりしていきんしゃい<br>ﾄﾞｿﾞｰ( ੭˙꒳ ˙)੭🍵´-</div>
+</div>
+
+<!-- ====== INSTALL ACCORDION ====== -->
+<div id="install-wrap" style="max-width:680px;margin:0.6rem auto 0;padding:0 1rem;">
+  <button id="install-btn" onclick="toggleInstall()" style="
+    width:100%;background:transparent;border:1px solid rgba(184,134,11,0.5);
+    border-radius:4px;padding:0.38rem 1rem;font-family:'Noto Sans JP',sans-serif;
+    font-size:0.78rem;color:rgba(184,134,11,0.95);cursor:pointer;letter-spacing:0.1em;
+    display:flex;align-items:center;justify-content:center;gap:0.45rem;
+    transition:all 0.2s;
+  " onmouseover="this.style.background='rgba(184,134,11,0.06)'" onmouseout="this.style.background='transparent'">
+    <span id="install-label">📲 アプリをインストールする</span>
+    <span id="install-arrow" style="font-size:0.65rem;transition:transform 0.3s;">▼</span>
+  </button>
+
+  <div id="install-panel" style="display:none;">
+    <div style="
+      background:rgba(255,255,255,0.4);border:1px solid rgba(184,134,11,0.18);
+      border-top:none;border-radius:0 0 4px 4px;padding:0.9rem 1rem;
+    ">
+
+      <!-- Android -->
+      <div style="margin-bottom:1rem;">
+        <div style="font-size:0.78rem;color:#b8860b;font-weight:700;letter-spacing:0.12em;margin-bottom:0.55rem;display:flex;align-items:center;gap:0.4rem;">
+          <span>🤖</span> Android
+        </div>
+        <button id="pwa-install-btn" onclick="triggerInstall()" style="
+          display:flex;align-items:center;justify-content:center;gap:0.6rem;width:auto;margin:0 auto;
+          padding:0.7rem 2.2rem;border-radius:999px;cursor:pointer;
+          background:linear-gradient(135deg,#c9980e,#b8860b);
+          border:none;
+          font-family:'Noto Sans JP',sans-serif;font-size:0.88rem;font-weight:700;
+          color:#fff;letter-spacing:0.12em;
+          box-shadow:0 3px 10px rgba(184,134,11,0.35);
+          transition:transform 0.15s,box-shadow 0.15s;
+        " onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 5px 16px rgba(184,134,11,0.45)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 3px 10px rgba(184,134,11,0.35)'">
+          <span style="font-size:1.1rem;">📲</span>
+          <span>ホーム画面に追加</span>
+        </button>
+        <div style="margin-top:0.8rem;">
+          <div class="android-manual" style="font-size:0.72rem;color:rgba(184,134,11,0.75);letter-spacing:0.1em;margin-bottom:0.4rem;">ボタンが表示されない場合は手動で追加できます</div>
+          <ol style="list-style:none;padding:0;display:flex;flex-direction:column;gap:0.35rem;">
+            <li style="display:flex;align-items:flex-start;gap:0.55rem;font-size:0.8rem;letter-spacing:0.05em;line-height:1.5;">
+              <span style="min-width:1.4rem;height:1.4rem;border-radius:50%;background:rgba(184,134,11,0.18);display:flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:700;color:#b8860b;flex-shrink:0;margin-top:0.05rem;">1</span>
+              <span class="android-step">Chrome でこのページを開く</span>
+            </li>
+            <li style="display:flex;align-items:flex-start;gap:0.55rem;font-size:0.8rem;letter-spacing:0.05em;line-height:1.5;">
+              <span style="min-width:1.4rem;height:1.4rem;border-radius:50%;background:rgba(184,134,11,0.18);display:flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:700;color:#b8860b;flex-shrink:0;margin-top:0.05rem;">2</span>
+              <span class="android-step">右上の <strong>「⋮」（メニュー）</strong> をタップ</span>
+            </li>
+            <li style="display:flex;align-items:flex-start;gap:0.55rem;font-size:0.8rem;letter-spacing:0.05em;line-height:1.5;">
+              <span style="min-width:1.4rem;height:1.4rem;border-radius:50%;background:rgba(184,134,11,0.18);display:flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:700;color:#b8860b;flex-shrink:0;margin-top:0.05rem;">3</span>
+              <span class="android-step"><strong>「ホーム画面に追加」</strong> をタップ</span>
+            </li>
+            <li style="display:flex;align-items:flex-start;gap:0.55rem;font-size:0.8rem;letter-spacing:0.05em;line-height:1.5;">
+              <span style="min-width:1.4rem;height:1.4rem;border-radius:50%;background:rgba(184,134,11,0.18);display:flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:700;color:#b8860b;flex-shrink:0;margin-top:0.05rem;">4</span>
+              <span>名前を確認して <strong>「追加」</strong> をタップ</span>
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- iOS -->
+      <div>
+        <div style="font-size:0.78rem;color:#b8860b;font-weight:700;letter-spacing:0.12em;margin-bottom:0.55rem;display:flex;align-items:center;gap:0.4rem;">
+          <span>🍎</span> <span class="ios-title">iPhone / iPad（Safari）</span>
+        </div>
+        <ol style="list-style:none;padding:0;display:flex;flex-direction:column;gap:0.35rem;">
+          <li style="display:flex;align-items:flex-start;gap:0.55rem;font-size:0.8rem;letter-spacing:0.05em;line-height:1.5;">
+            <span style="min-width:1.4rem;height:1.4rem;border-radius:50%;background:rgba(184,134,11,0.18);display:flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:700;color:#b8860b;flex-shrink:0;margin-top:0.05rem;">1</span>
+            <span class="ios-step">Safari でこのページを開く</span>
+          </li>
+          <li style="display:flex;align-items:flex-start;gap:0.55rem;font-size:0.8rem;letter-spacing:0.05em;line-height:1.5;">
+            <span style="min-width:1.4rem;height:1.4rem;border-radius:50%;background:rgba(184,134,11,0.18);display:flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:700;color:#b8860b;flex-shrink:0;margin-top:0.05rem;">2</span>
+            <span class="ios-step">画面下部の <strong>共有ボタン</strong>（□↑）をタップ</span>
+          </li>
+          <li style="display:flex;align-items:flex-start;gap:0.55rem;font-size:0.8rem;letter-spacing:0.05em;line-height:1.5;">
+            <span style="min-width:1.4rem;height:1.4rem;border-radius:50%;background:rgba(184,134,11,0.18);display:flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:700;color:#b8860b;flex-shrink:0;margin-top:0.05rem;">3</span>
+            <span class="ios-step">メニューをスクロールして <strong>「ホーム画面に追加」</strong> をタップ</span>
+          </li>
+          <li style="display:flex;align-items:flex-start;gap:0.55rem;font-size:0.8rem;letter-spacing:0.05em;line-height:1.5;">
+            <span style="min-width:1.4rem;height:1.4rem;border-radius:50%;background:rgba(184,134,11,0.18);display:flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:700;color:#b8860b;flex-shrink:0;margin-top:0.05rem;">4</span>
+            <span class="ios-step">名前を確認して <strong>「追加」</strong> をタップ</span>
+          </li>
+        </ol>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ====== OTHER APPS ACCORDION ====== -->
+<div id="other-apps-wrap" style="max-width:680px;margin:0.6rem auto 0;padding:0 1rem;">
+  <button id="otherapps-btn" onclick="toggleOtherApps()" style="
+    width:100%;background:transparent;border:1px solid rgba(184,134,11,0.5);
+    border-radius:4px;padding:0.38rem 1rem;font-family:'Noto Sans JP',sans-serif;
+    font-size:0.78rem;color:rgba(184,134,11,0.95);cursor:pointer;letter-spacing:0.1em;
+    display:flex;align-items:center;justify-content:center;gap:0.45rem;
+    transition:all 0.2s;
+  " onmouseover="this.style.background='rgba(184,134,11,0.06)'" onmouseout="this.style.background='transparent'">
+    <span id="otherapps-label">📱 その他の無料アプリで遊ぶ</span>
+    <span id="otherapps-arrow" style="font-size:0.65rem;transition:transform 0.3s;">▼</span>
+  </button>
+
+  <div id="otherapps-panel" style="display:none;">
+    <div style="
+      background:rgba(255,255,255,0.4);border:1px solid rgba(184,134,11,0.18);
+      border-top:none;border-radius:0 0 4px 4px;padding:1rem 1rem 0.8rem;
+      display:flex;flex-direction:column;gap:0.6rem;
+    ">
+      <a href="https://sintaichoseijyuku.pages.dev/" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:0.85rem;padding:0.75rem 1rem;border-radius:6px;text-decoration:none;background:linear-gradient(135deg,#e3f2fd,#bbdefb);border:1.5px solid rgba(33,150,243,0.35);box-shadow:0 2px 8px rgba(33,150,243,0.12);transition:transform 0.18s,box-shadow 0.18s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 5px 16px rgba(33,150,243,0.25)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 8px rgba(33,150,243,0.12)'">
+        <span style="font-size:1.5rem;line-height:1;">💃</span>
+        <div style="flex:1;min-width:0;">
+          <div style="font-size:0.92rem;color:#1565c0;letter-spacing:0.1em;font-weight:700;" class="otherapps-title">心体調整塾 ホームページ</div>
+          <div style="font-size:0.72rem;color:#0d47a1;margin-top:0.15rem;letter-spacing:0.08em;" class="otherapps-sub">sintaichoseijyuku.pages.dev</div>
+        </div>
+        <span style="font-size:0.7rem;color:rgba(21,101,192,0.5);">▶</span>
+      </a>
+      <a href="https://lit.link/aitakeshi" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:0.85rem;padding:0.75rem 1rem;border-radius:6px;text-decoration:none;background:linear-gradient(135deg,#fff8e1,#fff3cd);border:1.5px solid rgba(184,134,11,0.5);box-shadow:0 2px 8px rgba(184,134,11,0.15);transition:transform 0.18s,box-shadow 0.18s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 5px 16px rgba(184,134,11,0.28)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 8px rgba(184,134,11,0.15)'">
+        <span style="font-size:1.5rem;line-height:1;">🙋</span>
+        <div style="flex:1;min-width:0;">
+          <div style="font-size:0.92rem;color:#b8860b;letter-spacing:0.1em;font-weight:700;" class="otherapps-title">アプリ全部まとめはこちら</div>
+          <div style="font-size:0.72rem;color:#7a5c00;margin-top:0.15rem;letter-spacing:0.08em;" class="otherapps-sub">（日本語）lit.link/aitakeshi</div>
+        </div>
+        <span style="font-size:0.7rem;color:rgba(184,134,11,0.5);">▶</span>
+      </a>
+      <a href="https://warainpic.pages.dev" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:0.85rem;padding:0.75rem 1rem;border-radius:6px;text-decoration:none;background:linear-gradient(135deg,#fffde7,#fff9c4);border:1.5px solid rgba(255,193,7,0.45);box-shadow:0 2px 8px rgba(255,193,7,0.15);transition:transform 0.18s,box-shadow 0.18s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 5px 16px rgba(255,193,7,0.28)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 8px rgba(255,193,7,0.15)'">
+        <span style="font-size:1.5rem;line-height:1;">ꉂ🤣</span>
+        <div style="flex:1;min-width:0;">
+          <div style="font-size:0.92rem;color:#f57f17;letter-spacing:0.1em;font-weight:700;" class="otherapps-title">バカウケ５Ｗ１Ｈ</div>
+          <div style="font-size:0.72rem;color:#e65100;margin-top:0.15rem;letter-spacing:0.08em;" class="otherapps-sub">笑いのガチャンピック 🏅</div>
+        </div>
+        <span style="font-size:0.7rem;color:rgba(245,127,23,0.5);">▶</span>
+      </a>
+      <a href="https://mentalgachaup.pages.dev" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:0.85rem;padding:0.75rem 1rem;border-radius:6px;text-decoration:none;background:linear-gradient(135deg,#f3e5f5,#e1bee7);border:1.5px solid rgba(156,39,176,0.3);box-shadow:0 2px 8px rgba(156,39,176,0.1);transition:transform 0.18s,box-shadow 0.18s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 5px 16px rgba(156,39,176,0.22)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 8px rgba(156,39,176,0.1)'">
+        <span style="font-size:1.5rem;line-height:1;">🤣⤴</span>
+        <div style="flex:1;min-width:0;">
+          <div style="font-size:0.92rem;color:#6a1b9a;letter-spacing:0.1em;font-weight:700;" class="otherapps-title">メンタル ガチャあげ</div>
+          <div style="font-size:0.72rem;color:#4a148c;margin-top:0.15rem;letter-spacing:0.08em;" class="otherapps-sub">メンタルサプリの救世主！？</div>
+        </div>
+        <span style="font-size:0.7rem;color:rgba(106,27,154,0.5);">▶</span>
+      </a>
+      <a href="https://kamimikuji.pages.dev" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:0.85rem;padding:0.75rem 1rem;border-radius:6px;text-decoration:none;background:linear-gradient(135deg,#fff3e0,#ffe0b2);border:1.5px solid rgba(255,152,0,0.35);box-shadow:0 2px 8px rgba(255,152,0,0.12);transition:transform 0.18s,box-shadow 0.18s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 5px 16px rgba(255,152,0,0.25)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 8px rgba(255,152,0,0.12)'">
+        <span style="font-size:1.5rem;line-height:1;">🎋</span>
+        <div style="flex:1;min-width:0;">
+          <div style="font-size:0.92rem;color:#e65100;letter-spacing:0.1em;font-weight:700;" class="otherapps-title">火水おみくじ</div>
+          <div style="font-size:0.72rem;color:#bf360c;margin-top:0.15rem;letter-spacing:0.08em;" class="otherapps-sub">自分らしく生きやすく 👍</div>
+        </div>
+        <span style="font-size:0.7rem;color:rgba(230,81,0,0.5);">▶</span>
+      </a>
+      <a href="https://zangeforgive.pages.dev" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:0.85rem;padding:0.75rem 1rem;border-radius:6px;text-decoration:none;background:linear-gradient(135deg,#ede7f6,#d1c4e9);border:1.5px solid rgba(103,58,183,0.3);box-shadow:0 2px 8px rgba(103,58,183,0.1);transition:transform 0.18s,box-shadow 0.18s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 5px 16px rgba(103,58,183,0.22)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 8px rgba(103,58,183,0.1)'">
+        <span style="font-size:1.5rem;line-height:1;">🕯</span>
+        <div style="flex:1;min-width:0;">
+          <div style="font-size:0.92rem;color:#4527a0;letter-spacing:0.1em;font-weight:700;" class="otherapps-title">ZANGE 懺悔</div>
+          <div style="font-size:0.72rem;color:#311b92;margin-top:0.15rem;letter-spacing:0.08em;" class="otherapps-sub">自分を許して軽くなる 🕯*ﾟ</div>
+        </div>
+        <span style="font-size:0.7rem;color:rgba(69,39,160,0.5);">▶</span>
+      </a>
+      <a href="https://openhearttraining.pages.dev" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:0.85rem;padding:0.75rem 1rem;border-radius:6px;text-decoration:none;background:linear-gradient(135deg,#e8f5e9,#c8e6c9);border:1.5px solid rgba(76,175,80,0.35);box-shadow:0 2px 8px rgba(76,175,80,0.12);transition:transform 0.18s,box-shadow 0.18s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 5px 16px rgba(76,175,80,0.25)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 8px rgba(76,175,80,0.12)'">
+        <span style="font-size:1.5rem;line-height:1;">☯️</span>
+        <div style="flex:1;min-width:0;">
+          <div style="font-size:0.92rem;color:#2e7d32;letter-spacing:0.1em;font-weight:700;" class="otherapps-title">素直力トレーニング</div>
+          <div style="font-size:0.72rem;color:#1b5e20;margin-top:0.15rem;letter-spacing:0.08em;" class="otherapps-sub">人生を好転させる ☯️</div>
+        </div>
+        <span style="font-size:0.7rem;color:rgba(46,125,50,0.5);">▶</span>
+      </a>
+      <a href="https://balancetraning.pages.dev/" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:0.85rem;padding:0.75rem 1rem;border-radius:6px;text-decoration:none;background:linear-gradient(135deg,#e0f7fa,#b2ebf2);border:1.5px solid rgba(0,188,212,0.35);box-shadow:0 2px 8px rgba(0,188,212,0.12);transition:transform 0.18s,box-shadow 0.18s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 5px 16px rgba(0,188,212,0.25)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 8px rgba(0,188,212,0.12)'">
+        <span style="font-size:1.5rem;line-height:1;">⚖️</span>
+        <div style="flex:1;min-width:0;">
+          <div style="font-size:0.92rem;color:#00838f;letter-spacing:0.1em;font-weight:700;" class="otherapps-title">言葉とメンタルのバランストレーニング</div>
+          <div style="font-size:0.72rem;color:#006064;margin-top:0.15rem;letter-spacing:0.08em;" class="otherapps-sub"></div>
+        </div>
+        <span style="font-size:0.7rem;color:rgba(0,131,143,0.5);">▶</span>
+      </a>
+      <a href="https://kamisindan.pages.dev" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:0.85rem;padding:0.75rem 1rem;border-radius:6px;text-decoration:none;background:linear-gradient(135deg,#fce4ec,#f8bbd0);border:1.5px solid rgba(233,30,99,0.3);box-shadow:0 2px 8px rgba(233,30,99,0.1);transition:transform 0.18s,box-shadow 0.18s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 5px 16px rgba(233,30,99,0.22)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 8px rgba(233,30,99,0.1)'">
+        <span style="font-size:1.5rem;line-height:1;">🔥☔</span>
+        <div style="flex:1;min-width:0;">
+          <div style="font-size:0.92rem;color:#c2185b;letter-spacing:0.1em;font-weight:700;" class="otherapps-title">火水診断</div>
+          <div style="font-size:0.72rem;color:#880e4f;margin-top:0.15rem;letter-spacing:0.08em;" class="otherapps-sub">12タイプ・キャラクター ✏💃</div>
+        </div>
+        <span style="font-size:0.7rem;color:rgba(194,24,91,0.5);">▶</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ====== SHARE ACCORDION ====== -->
+<div id="share-wrap" style="max-width:680px;margin:0.6rem auto 3rem;padding:0 1rem;">
+  <button id="share-btn" onclick="toggleShare()" style="
+    width:100%;background:transparent;border:1px solid rgba(184,134,11,0.5);
+    border-radius:4px;padding:0.38rem 1rem;font-family:'Noto Sans JP',sans-serif;
+    font-size:0.78rem;color:rgba(184,134,11,0.95);cursor:pointer;letter-spacing:0.1em;
+    display:flex;align-items:center;justify-content:center;gap:0.45rem;
+    transition:all 0.2s;
+  " onmouseover="this.style.background='rgba(184,134,11,0.06)'" onmouseout="this.style.background='transparent'">
+    <span id="share-label">🔗 友達におしえる</span>
+    <span id="share-arrow" style="font-size:0.65rem;transition:transform 0.3s;">▼</span>
+  </button>
+
+  <div id="share-panel" style="display:none;">
+    <div style="
+      background:rgba(255,255,255,0.4);border:1px solid rgba(184,134,11,0.18);
+      border-top:none;border-radius:0 0 4px 4px;padding:0.7rem 0.8rem;
+      display:flex;flex-direction:column;gap:0.45rem;
+    ">
+      <a href="https://twitter.com/intent/tweet?text=%E3%83%89%E3%83%A9%E3%82%B4%E3%83%B3%E3%81%8A%E3%81%A2%E3%81%95%E3%82%93%E3%81%A8%E3%81%AE%E3%82%93%E3%81%B3%E3%82%8A%E8%A9%B1%E3%81%97%E3%82%88%E3%81%86%F0%9F%90%89%F0%9F%8D%B5&url=" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:0.7rem;padding:0.6rem 0.9rem;border-radius:5px;text-decoration:none;background:#000;color:#fff;font-family:'Noto Sans JP',sans-serif;font-size:0.82rem;letter-spacing:0.08em;transition:opacity 0.18s;" onmouseover="this.style.opacity='0.82'" onmouseout="this.style.opacity='1'">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.91-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        <span id="share-x-label">X（ツイート）でシェア</span>
+      </a>
+      <a href="https://bsky.app/intent/compose?text=%E3%83%89%E3%83%A9%E3%82%B4%E3%83%B3%E3%81%8A%E3%81%A2%E3%81%95%E3%82%93%E3%81%A8%E3%81%AE%E3%82%93%E3%81%B3%E3%82%8A%F0%9F%90%89%F0%9F%8D%B5%20" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:0.7rem;padding:0.6rem 0.9rem;border-radius:5px;text-decoration:none;background:#0085ff;color:#fff;font-family:'Noto Sans JP',sans-serif;font-size:0.82rem;letter-spacing:0.08em;transition:opacity 0.18s;" onmouseover="this.style.opacity='0.82'" onmouseout="this.style.opacity='1'">
+        <svg width="15" height="15" viewBox="0 0 600 530" fill="currentColor"><path d="M135.72 44.03C202.216 93.951 273.74 195.17 300 249.49c26.262-54.316 97.782-155.54 164.28-205.46C512.26 8.009 590-19.862 590 68.825c0 17.712-10.155 148.79-16.111 170.07-20.703 73.984-96.144 92.854-163.25 81.433 117.3 19.964 147.14 86.092 82.697 152.22-122.39 125.59-175.91-31.511-189.63-71.766-2.514-7.38-3.69-10.832-3.708-7.896-.017-2.936-1.193.516-3.707 7.896-13.714 40.255-67.233 197.36-189.63 71.766-64.444-66.128-34.605-132.26 82.697-152.22-67.108 11.421-142.55-7.449-163.25-81.433C20.155 217.613 10 86.535 10 68.825c0-88.687 77.742-60.816 125.72-24.795z"/></svg>
+        <span id="share-bsky-label">Bluesky でシェア</span>
+      </a>
+      <a href="https://www.threads.net/intent/post?text=%E3%83%89%E3%83%A9%E3%82%B4%E3%83%B3%E3%81%8A%E3%81%A2%E3%81%95%E3%82%93%E3%81%A8%E3%81%AE%E3%82%93%E3%81%B3%E3%82%8A%F0%9F%90%89%F0%9F%8D%B5%20" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:0.7rem;padding:0.6rem 0.9rem;border-radius:5px;text-decoration:none;background:#101010;color:#fff;font-family:'Noto Sans JP',sans-serif;font-size:0.82rem;letter-spacing:0.08em;transition:opacity 0.18s;" onmouseover="this.style.opacity='0.82'" onmouseout="this.style.opacity='1'">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.5 12.068v-.065c.01-3.716.912-6.636 2.683-8.678C6.01 1.218 8.578.04 12.008 0h.064c2.801.02 5.147.806 6.971 2.339 1.846 1.55 2.98 3.82 3.373 6.75l-2.979.416c-.675-4.83-3.43-7.08-7.423-7.103h-.049c-2.745.019-4.793.935-6.086 2.724C4.7 6.658 4.087 9.044 4.08 12.02v.06c.005 2.86.578 5.172 1.7 6.87 1.219 1.837 3.144 2.775 5.72 2.792h.035c2.307-.015 3.943-.63 4.994-1.88.978-1.16 1.479-2.95 1.479-5.322 0-.073 0-.146-.003-.218a6.35 6.35 0 0 0-.006-.198c-.045-.814-.263-1.47-.648-1.953-.378-.472-.889-.72-1.52-.737-.014 0-.028 0-.042 0-.617 0-1.118.19-1.494.568-.37.37-.572.9-.6 1.573.019.374.082.663.189.861.104.192.264.335.47.43.197.09.44.135.722.135.038 0 .077 0 .116-.002l.107-.005.279 2.972-.106.009a5.024 5.024 0 0 1-.426.018c-.653 0-1.244-.123-1.757-.367a3.517 3.517 0 0 1-1.274-1.03c-.337-.448-.567-.99-.683-1.613a7.91 7.91 0 0 1-.1-1.26c.042-1.536.506-2.773 1.379-3.676.889-.919 2.1-1.385 3.598-1.385h.065c1.531.019 2.778.562 3.705 1.614.921 1.045 1.42 2.52 1.483 4.384.003.1.005.202.005.304 0 2.893-.694 5.145-2.062 6.692-1.38 1.562-3.457 2.354-6.175 2.375z"/></svg>
+        <span id="share-threads-label">Threads でシェア</span>
+      </a>
+      <a href="https://social-plugins.line.me/lineit/share?url=&text=%E3%83%89%E3%83%A9%E3%82%B4%E3%83%B3%E3%81%8A%E3%81%A2%E3%81%95%E3%82%93%E3%81%A8%E3%81%AE%E3%82%93%E3%81%B3%E3%82%8A%F0%9F%90%89%F0%9F%8D%B5" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:0.7rem;padding:0.6rem 0.9rem;border-radius:5px;text-decoration:none;background:#06c755;color:#fff;font-family:'Noto Sans JP',sans-serif;font-size:0.82rem;letter-spacing:0.08em;transition:opacity 0.18s;" onmouseover="this.style.opacity='0.82'" onmouseout="this.style.opacity='1'">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M24 10.304c0-5.369-5.383-9.738-12-9.738-6.616 0-12 4.369-12 9.738 0 4.814 4.269 8.846 10.036 9.608.391.084.922.258 1.057.592.121.303.079.778.039 1.085l-.171 1.027c-.053.303-.242 1.186 1.039.647 1.281-.54 6.911-4.069 9.428-6.967C23.057 14.501 24 12.539 24 10.304z"/></svg>
+        <span id="share-line-label">LINE で送る</span>
+      </a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:0.7rem;padding:0.6rem 0.9rem;border-radius:5px;text-decoration:none;background:#1877f2;color:#fff;font-family:'Noto Sans JP',sans-serif;font-size:0.82rem;letter-spacing:0.08em;transition:opacity 0.18s;" onmouseover="this.style.opacity='0.82'" onmouseout="this.style.opacity='1'">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        <span id="share-fb-label">Facebook でシェア</span>
+      </a>
+      <button onclick="copyShareUrl()" style="display:flex;align-items:center;gap:0.7rem;padding:0.6rem 0.9rem;border-radius:5px;background:rgba(245,235,200,0.7);border:1px solid rgba(184,134,11,0.35);color:#3a2200;font-family:'Noto Sans JP',sans-serif;font-size:0.82rem;letter-spacing:0.08em;cursor:pointer;width:100%;transition:opacity 0.18s;" onmouseover="this.style.opacity='0.75'" onmouseout="this.style.opacity='1'" id="copy-url-btn">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        <span id="copy-url-label">サイトURLをコピー</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- コピーライト -->
+<div id="copyright">©︎ Takechan</div>
+
+<script>
+// ==============================
+// 龍のセリフリスト（おじさん系）
+// ==============================
+let dragonLines = [
+  // 肩こり
+  "あー、肩こっとうばい。昨日、雲の上でずっと横になっとったけんかなって思いよるとよ",
+  "最近、首まわりがガチガチたいね。神龍やけんね、整体いきたか気分ばい",
+  "肩もみしてくれる人おらんかね。翼があって逆に不便やけんね",
+
+  // コンビニ
+  "コンビニのホットスナック、最近クオリティ上がっとらん？俺だけかな、そう思うとは",
+  "セブンのおにぎり、昆布が一番好きっちゃね。梅じゃなくて昆布ばい",
+  "コンビニコーヒー、Mサイズで十分やけんね、ついL頼んでしまうとよ",
+  "肉まんの季節になると落ち着くっちゃけどね。なんか、こう、ほっとするやろ",
+
+  // 寝坊
+  "今日さ、また寝坊したばい。雲の上って意外と寝やすくてよかとよ",
+  "目覚まし3個かけても起きられんとよ。神秘の存在とか関係なかとよ、しとると？",
+  "昨日夜ふかして今日眠かとよ。何しとったかって、ユーチューブしとったばい",
+
+  // ラーメン
+  "この近くに家系ラーメンの旨か店あるやん。あそこ最高やけんね",
+  "二郎系の話になると俺、語りだすばい。よかと？聞く気あるなら話すけど",
+  "ラーメンのスープ、全部飲む派？俺は飲む派たいね。体に悪かのわかっとって飲むとよ",
+  "つけ麺とラーメンどっちって聞かれたら即答でラーメンばい。これ譲れんとよ",
+
+  // お茶
+  "とりあえずお茶飲む？俺いつも飲んでるとよ、緑茶ばい。よかと？",
+  "お茶なかと落ち着かんとよ。宇宙の真理よりお茶が先たいね、これが好きばい",
+  "缶のお茶でよかとよ。こだわりとかなかわ、飲めれば。それでよかたい",
+
+  // 日常系
+  "最近ちょっと疲れ気味やけんね。悩みとかじゃなくてただの睡眠不足ばい",
+  "天気よかなと思って外出たら風強くてさ、損した気分になったばい",
+  "なんか今日、なんもしたくなか日ばい。そういう日なか？しとると？",
+  "昼飯なに食べるか朝から考えとうとよ、結局いつもと同じもの食べるとよ",
+  "暑かと思ったら寒かし、寒かと思ったら暑か。体温調節下手くそやけんね俺",
+  "この前、電話しながら何の用件か忘れて、しばらく黙っとったばい",
+  "最近、同じ夢ばっか見るとよ。なんか走りよるやつ。よかよか、気にせんとこ",
+
+  // 神様要素あり（でも普通）
+  "ひさしぶりに雲の上いったけど、やっぱ地上のほうが落ち着くばい",
+  "宇宙の声とか聞こえるとばってん、内容がよう聞き取れんとよ。しとるっちゃけどね",
+  "龍神として使命があるとか言うけど、まあ今日はよかかって感じの日もあるとよ",
+
+  // 食べ物・飲み物
+  "最近ハマっとうのがコーヒーゼリーたいね。甘さ控えめのやつが好きっちゃね",
+  "カップ麺、3分待てんとよ。2分50秒くらいで開けてしまうばい",
+  "唐揚げに何つける？俺レモン派じゃなかとよ。そのままで十分やけんね",
+  "スーパーの試食コーナー、なんか避けてしまうとよ。気まずかやけん",
+  "冷凍餃子、パリッと焼けると地味に嬉しかとよ。失敗するとへこむばい",
+  "コンビニスイーツ、種類多すぎて選べんくて結局プリン買うとよ",
+  "鍋の〆はご飯かうどんか問題、永遠に解決せんとよ。よかよか、どっちでも",
+  "納豆、毎朝食べとうとばってん飽きんとよね。不思議やろ、これが好きばい",
+  "アイス、冬でも食べるとよ。むしろ冬のほうがゆっくり食べられてよかとよ",
+  "チャーハンって家で作るとなぜか店に勝てんとよ。なんでやろかね",
+
+  // スマホ・SNS
+  "スマホの充電、いっつもギリギリまで放置してしまうとよ",
+  "通知音が鳴るたびにドキッとするとよ、なんとかならんかね",
+  "ショート動画見よったら1時間経っとったばい。なんなんあれ、しとると？",
+  "LINE既読つけたまま返事忘れるとよ、いちばんよくなかやつやけんね",
+  "写真の整理、しようしようと思って3年経ったばい",
+  "アプリの更新、いつも後でにして永遠に後でのままたいね",
+
+  // 日常あるある
+  "メモしたのに後でメモが何のことかわからんなるやつ、あるやろ？",
+  "返信せないかんと思いよううちにタイミング逃してしまうとよ、よくなかばい",
+  "傘持っていかんかった日に限って降るやん。絶対なんかあるばい",
+  "エレベーター、閉じるボタン押したのになぜかドア開いたりするとよね",
+  "信号、渡ろうとした瞬間に赤になるやつ、狙っとうやろ。よかよか待つけど",
+  "財布に小銭いっぱい入っとうのに、いつもカード出してしまうとよ",
+  "買い物いって絶対忘れるやつひとつあるとよ。今日は牛乳やけんね",
+  "ごみ出し、ギリギリに起きて間に合わんかったことある？俺あるばい",
+
+  // くつろぎ・趣味
+  "休日の昼間にぼーっとするの、最近やっと罪悪感なくなってきたばい",
+  "本、買うのは好きっちゃね。積んでいくだけばってん",
+  "音楽、詳しくなかとばってん同じアルバムずっとリピートしとるとよ",
+  "散歩、特に目的なかやつが一番よかとよ。コンビニ寄るだけとか、それでよかたい",
+  "なんか植物育てたいと思いよるばってん、枯らす自信しかなかとよ",
+  "映画途中で寝てしまって、翌日また最初から見るやつ、今日もやったばい",
+
+  // 健康・体
+  "健康診断の結果、見るの3日後回しにしてしまったばい",
+  "最近なんか目が疲れやすくてさ。画面見すぎやけんね、そりゃそうかね",
+  "水、ちゃんと飲もうと思って机にコップ置いたけど飾りになっとうとよ",
+  "ストレッチしようと思って床に座ったら、そのまま横になってしまったばい",
+  "ランニングアプリ入れたよ。まだ1回も使っとらんばってん、よかよか",
+
+  // 天気・季節
+  "梅雨って嫌いやけど、雨の音だけは好きっちゃね",
+  "秋って一瞬で終わるよね。気づいたら冬になっとうとよ",
+  "夏の夜風、あれだけは好きばい。昼間は最悪やけんね",
+  "花粉の季節、毎年なめてかかって毎年やられるとよ",
+
+  // 人間関係
+  "久しぶりに連絡来るとちょっと構えてしまうとよ。何かあったかなってしとると？",
+  "ありがとうって言われると照れるとよね。照れるくせに嬉しかし、これが好きばい",
+  "別れ際、もう少し気の利いたこと言えばよかったって後から思うやつ",
+  "自分の話ばっかしてしまったかなって帰り道に反省するとよ",
+
+  // 哲学っぽいけど普通
+  "なんで嫌なことって鮮明に覚えとうとやろな。よか思い出よりも",
+  "時間経つの早くなったよね。年のせいかな、龍でもそうなるとよ",
+  "一番よか温度のお風呂って、毎回狙っても難しかとよ",
+  "なんか得した気分になるのって、結局食べ物のときが多か気がするとよ",
+  "ぼーっとしとった時間って、なんか必要な気もするとよ。知らんばってん",
+
+  // はい／いいえ質問系
+  "ラーメンのスープ、全部飲む？しとると？",
+  "朝型？夜型どっち、お前はどっちばい",
+  "カップ麺2分で開けてしまうタイプ？俺やけんね",
+  "目覚まし一発で起きられる？よかと？",
+  "財布より先にスマホなくしたことある？",
+  "傘、よう忘れるほう？俺そうばい",
+  "映画、字幕派？吹き替え派？どっちっちゃね",
+  "納豆、食べる？好きっちゃね？",
+  "からあげにレモンかける？よかと？",
+  "冬でもアイス食べる？それでよかたい？",
+  "お風呂、毎日派？しとると？",
+  "コンビニいくとついで買いしてしまう？",
+  "休日、昼まで寝られる人間？よかよかそれで",
+  "ひとりで外食できる？俺はできるばい",
+  "辛かもの得意なほう？",
+  "甘いもの、ご飯のあとじゃないと食べられん派？",
+  "スマホの充電、20%切るまで放置するタイプ？",
+  "歩きながら考え事するほう？",
+  "悩み、誰かに話すより自分で抱えるほう？",
+  "写真、よう撮るほう？",
+];
+
+// ==============================
+// 龍の返答（ユーザーボタンに反応）
+// ==============================
+let responses = {
+  "はい": [
+    "やろ、わかってくれるか。よかよか",
+    "そうそう、それそれたい。わかっとうばい",
+    "うん、まあそういうことやけんね",
+    "よかった、俺だけじゃなかったばい",
+    "ね、普通にそう思うよね。しとると？",
+    "やろ、わかる人にはわかるとよ",
+    "あー、それ聞いてほっとしたばい",
+    "同じこと思いよったわ、うん。よかよか",
+    "そうやろ、間違えとらんかったばい",
+    "やっぱそうか。それでよかたい",
+  ],
+  "いいえ": [
+    "そうか？まあ人それぞれやけんね",
+    "マジか、俺的にはそうなんやけどな",
+    "ふーん、そういう考え方もあるかね",
+    "いや、でも俺はそう思うとよね",
+    "まあ、よかとばってどさ",
+    "え、そうなの。ちょっと意外やったばい",
+    "そっか…うん、まあ否定はせんばい",
+    "違うか。まあ、そういうこともあるとよ",
+    "んー、俺の感覚ズレとうとかな",
+    "そか。それはそれでよかよか",
+  ],
+  "そうだね": [
+    "やろ、気が合うばい。よかよか",
+    "わかってくれる人おってよかったばい",
+    "ね、当たり前のことやけんね",
+    "そうなんよ、ありがとうね",
+    "うんうん、そういうことたいね",
+    "やろ、それが言いたかったとよ",
+    "共感してもらえると話した甲斐あるばい",
+    "ね、なんか嬉しかわそう言われると。好きっちゃね",
+    "そうやろ。ありがとう、聞いてくれて",
+    "うん、俺もそう思いよったよ",
+  ],
+  "そうでもなかろ 笑": [
+    "え、そうかな。でもまあよかよか",
+    "そっか、まあ人によるかね",
+    "うーん、俺はそう思うとやけどな",
+    "まあ、否定はせんばい",
+    "そういう意見もあるよね、なるほどばい",
+    "あ、そう感じるとか。ちょっと考えてみるばい",
+    "そっかぁ。じゃあ俺だけかもな",
+    "むずかしかね、俺の感覚がズレとうのかも",
+    "まあ全員そうじゃなかよね、確かに",
+    "うーん、でもやっぱそう思ってしまうとよ俺は",
+  ],
+  "わかるわぁ～": [
+    "やろ、わかってくれるか。嬉しかばい",
+    "そうそう、わかる人にはわかるとよ",
+    "ね、なんかわかるよね。好きっちゃそういうの",
+    "わかってもらえると話した甲斐あるばい",
+    "うん、同じこと思いよったわ",
+    "やっぱそうやろ、俺だけじゃなかったばい",
+    "ね、なんか共感してもらえると嬉しかわ",
+    "わかるか、ありがとうね。聞いてくれて",
+    "やろやろ、そうなんよそれが",
+    "うん、わかってくれる人おってよかったばい",
+  ],
+  "バイバイ": [
+    "おう、バイバイばい🐉またきんしゃい",
+    "おー、またね。のんびりしていきんしゃい",
+    "バイバイ！また話しかけてきてね",
+    "おう、またな。待っとうばい",
+    "バイバイ🍵またいつでもきんしゃい",
+    "またね～。龍はいつでもここにおるけん",
+    "おつかれ！またゆっくり話しよ",
+    "バイバイ。今日もありがとうね",
+    "またきてね。お茶用意して待っとうばい🍵",
+    "おー、またね！元気でな",
+  ],
+  "またね": [
+    "またね～🐉待っとうばい",
+    "おう、またきんしゃい。いつでもどうぞ",
+    "またね！ゆっくり休んでな",
+    "またね～。お茶用意して待っとうばい🍵",
+    "うん、またな。元気でな",
+    "またきてね～。龍はここにおるけん",
+    "またね！今日も話せてよかったばい",
+    "おつかれ、またね。のんびりしていきんしゃい",
+    "またね～。いつでも来てよかよ",
+    "うん、またな！待っとうばい🐉",
+  ],
+  "おやすみ": [
+    "おやすみ🌙ゆっくり休んでな",
+    "おやすみばい。今日もお疲れ様やったね",
+    "おやすみ～🍵ええ夢みてな",
+    "おやすみ。ゆっくり寝んしゃい",
+    "おやすみなさい🌙また明日も来てね",
+    "おやすみ～。体に気をつけてな",
+    "おやすみばい。今日も一日よう頑張ったね",
+    "おやすみ🌙龍も一緒に休むばい",
+    "ゆっくり休んでな、おやすみ～",
+    "おやすみ。また起きたら話しかけてきてね🐉",
+  ],
+  "へぇ～": [
+    "やろ、俺もそう思って",
+    "へぇやろ、びっくりするよね",
+    "まあ、そんな感じたいね",
+    "ね、なんか面白くなか？好きっちゃね",
+    "そうそう、それが言いたかったとよ",
+    "そうなんよ、俺もへぇって感じやったばい",
+    "初めて聞いたって顔しとったわ正直",
+    "やろ、なんか変に引っかかるやん",
+    "俺もその反応やったけん安心したばい",
+    "ね、ちょっとクセになる話やろ？よかよか",
+  ],
+};
+
+// ==============================
+// 状態管理
+// ==============================
+let isTyping = false;
+let currentLineIndex = 0;
+let shuffledLines = [];
+let waitingForReply = false;
+
+// ==============================
+// ヒストリー永続化
+// ==============================
+const STORAGE_KEY = 'dragonOjisan_history';
+
+function saveHistory() {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({
+      shuffledLines,
+      currentLineIndex
+    }));
+  } catch(e) {}
+}
+
+function loadHistory() {
+  try {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (!saved) return false;
+    const data = JSON.parse(saved);
+    if (data.shuffledLines && data.shuffledLines.length === dragonLines.length) {
+      shuffledLines = data.shuffledLines;
+      currentLineIndex = data.currentLineIndex || 0;
+      return true;
+    }
+  } catch(e) {}
+  return false;
+}
+
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function getNextLine() {
+  if (currentLineIndex >= shuffledLines.length) {
+    shuffledLines = shuffle(dragonLines);
+    currentLineIndex = 0;
+  }
+  const line = shuffledLines[currentLineIndex++];
+  saveHistory();
+  return line;
+}
+
+function typeText(text, callback) {
+  const el = document.getElementById('speech-text');
+  el.textContent = '';
+  isTyping = true;
+
+  let i = 0;
+  const msPerChar = 60;
+  let lastTime = null;
+  let accumulated = 0;
+
+  function frame(timestamp) {
+    if (!lastTime) lastTime = timestamp;
+    const delta = Math.min(timestamp - lastTime, 100); // タブ非アクティブ対策
+    accumulated += delta;
+    lastTime = timestamp;
+
+    while (accumulated >= msPerChar && i < text.length) {
+      el.textContent += text[i];
+      i++;
+      accumulated -= msPerChar;
+    }
+
+    if (i < text.length) {
+      requestAnimationFrame(frame);
+    } else {
+      isTyping = false;
+      if (callback) callback();
+    }
+  }
+  requestAnimationFrame(frame);
+}
+
+function showDragonLine() {
+  if (isTyping) return;
+  waitingForReply = true;
+  setStatus('龍、しゃべり中...');
+
+  const line = getNextLine();
+  typeText(line, () => {
+    setStatus('龍、返事まち');
+  });
+}
+
+let goodbyeLines = [
+  "…ちょっと、さみしかばい",
+  "…いってもうた。お茶、冷めるやん",
+  "…あ、そ。まあええけど🍵",
+  "…龍、ひとりになってもうた 笑",
+  "…まあ、またくるやろ。たぶん",
+  "…シーン…🐉",
+  "…お茶、一杯余ったばい",
+  "…あ、財布忘れとらんかな 笑",
+  "…なんか急に静かになったばい",
+  "…龍、ちょっぴり寂しかよ？内緒ばい",
+];
+
+function userReply(text) {
+  if (isTyping) return;
+
+  document.querySelectorAll('.reply-btn').forEach(b => {
+    if (b.textContent === text) {
+      b.classList.add('pressed');
+      setTimeout(() => b.classList.remove('pressed'), 300);
+    }
+  });
+
+  const goodbyeKeys = TRANSLATIONS[currentLang].buttons.slice(6); const isGoodbye = goodbyeKeys.includes(text);
+
+  setTimeout(() => {
+    const pool = responses[text];
+    const reaction = pool[Math.floor(Math.random() * pool.length)];
+    typeText(reaction, () => {
+      if (isGoodbye) {
+        // お別れの時はひとり言を止めて、お茶目なつぶやきを1回だけ
+        setTimeout(() => {
+          const line = goodbyeLines[Math.floor(Math.random() * goodbyeLines.length)];
+          typeText(line, () => {});
+        }, 1000);
+      } else {
+        setTimeout(showDragonLine, 1800);
+      }
+    });
+  }, 500);
+}
+
+function setStatus(text) {
+  // status bar removed
+}
+
+// ==============================
+// 雲パーティクル
+// ==============================
+function spawnCloud() {
+  const stage = document.getElementById('dragon-stage');
+  const el = document.createElement('div');
+  el.className = 'cloud-particle';
+  const size = 20 + Math.random() * 40;
+  el.style.width = size + 'px';
+  el.style.height = size + 'px';
+  el.style.left = (20 + Math.random() * 60) + '%';
+  el.style.bottom = '10px';
+  const dur = 3 + Math.random() * 2;
+  el.style.animationDuration = dur + 's';
+  el.style.animationDelay = '0s';
+  stage.appendChild(el);
+  setTimeout(() => el.remove(), dur * 1000);
+}
+
+setInterval(spawnCloud, 800);
+
+// ==============================
+// スタート
+// ==============================
+// ヒストリーをロード、なければ新規シャッフル
+if (!loadHistory()) {
+  shuffledLines = shuffle(dragonLines);
+}
+
+function getStartLine(lang) {
+  const h = new Date().getHours();
+  let slot;
+  if (h >= 5 && h < 11)       slot = 'morning';
+  else if (h >= 11 && h < 18) slot = 'daytime';
+  else if (h >= 18 && h < 23) slot = 'evening';
+  else                         slot = 'midnight';
+  const lines = TRANSLATIONS[lang].startLines[slot];
+  return lines[Math.floor(Math.random() * lines.length)];
+}
+
+function startApp() {
+  const video = document.getElementById('dragon-video');
+  if (video) video.play().catch(() => {});
+  const overlay = document.getElementById('tap-overlay');
+  if (overlay) {
+    overlay.style.opacity = '0';
+    setTimeout(() => overlay.remove(), 400);
+  }
+  setTimeout(() => {
+    typeText(getStartLine(currentLang), () => {});
+  }, 600);
+}
+
+startApp();
+
+// ==============================
+// アコーディオン（参考ファイルそのまま）
+// ==============================
+function toggleInstall() {
+  const panel = document.getElementById('install-panel');
+  const arrow = document.getElementById('install-arrow');
+  const open = panel.style.display === 'none' || panel.style.display === '';
+  panel.style.display = open ? 'block' : 'none';
+  arrow.style.transform = open ? 'rotate(180deg)' : 'rotate(0deg)';
+}
+let _deferredPrompt = null;
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  _deferredPrompt = e;
+});
+function triggerInstall() {
+  if (_deferredPrompt) {
+    _deferredPrompt.prompt();
+    _deferredPrompt.userChoice.then(() => { _deferredPrompt = null; });
+  }
+}
+function toggleOtherApps() {
+  const panel = document.getElementById('otherapps-panel');
+  const arrow = document.getElementById('otherapps-arrow');
+  const open = panel.style.display === 'none' || panel.style.display === '';
+  panel.style.display = open ? 'block' : 'none';
+  arrow.style.transform = open ? 'rotate(180deg)' : 'rotate(0deg)';
+}
+function toggleShare() {
+  const panel = document.getElementById('share-panel');
+  const arrow = document.getElementById('share-arrow');
+  const open = panel.style.display === 'none' || panel.style.display === '';
+  panel.style.display = open ? 'block' : 'none';
+  arrow.style.transform = open ? 'rotate(180deg)' : 'rotate(0deg)';
+}
+function copyShareUrl() {
+  navigator.clipboard.writeText(location.href).then(() => {
+    const label = document.getElementById('copy-url-label');
+    label.textContent = TRANSLATIONS[currentLang].copiedUrl;
+    setTimeout(() => { label.textContent = TRANSLATIONS[currentLang].copyUrl; }, 2000);
+  });
+}
+
+function openOtherApps() {
+  alert(TRANSLATIONS[currentLang].otherAppsAlert);
+}
+
+function shareApp() {
+  const text = TRANSLATIONS[currentLang].shareText;
+  const url = location.href;
+  if (navigator.share) {
+    navigator.share({ title: TRANSLATIONS[currentLang].shareTitle, text, url }).catch(() => {});
+  } else {
+    navigator.clipboard.writeText(url).then(() => {
+      alert(TRANSLATIONS[currentLang].copyAlert);
+    }).catch(() => {
+      alert(TRANSLATIONS[currentLang].copyAlertFallback + url);
+    });
+  }
+}
+
+// ==============================
+// 言語切り替え
+// ==============================
+const TRANSLATIONS = {
+  en: {
+    htmlLang: "en",
+    pageTitle: "Dragon Uncle",
+    ogTitle: "Dragon Uncle🐉🥸",
+    titleMain: "Dragon Uncle's\u200b<span class=\"title-emoji\">🐉🧐</span>",
+    titleSub: "Mostly just talkin\u2019 to myself ꉂ🤣𐤔💬",
+    tapOverlay: "Tap to Start",
+    tapOverlaySub: "Dragon on standby",
+    nobibi: "Just take it easy now<br>Here ya go (っ˘ω˘ς )🍵",
+    installBtn: "📲 Install the App",
+    androidManual: "If the button above doesn\u2019t appear, add manually:",
+    iosTitle: "iPhone / iPad (Safari)",
+    androidSteps: ["Open this page in Chrome", "Tap \u300c\u22ee\u300d (Menu) in the top right", 'Tap <strong>"Add to Home Screen"</strong>', 'Confirm the name and tap <strong>"Add"</strong>'],
+    iosSteps: ["Open this page in Safari", "Tap the <strong>Share button</strong> (\u25a1\u2191) at the bottom", 'Scroll and tap <strong>"Add to Home Screen"</strong>', 'Confirm the name and tap <strong>"Add"</strong>'],
+    addToHome: "Add to Home Screen",
+    otherAppsBtn: "📱 Try Other Free Apps",
+    shareBtn: "🔗 Tell Your Friends",
+    copyUrl: "Copy Site URL",
+    copiedUrl: "\u2705 Copied!",
+    shareText: "Chattin\u2019 with Dragon Uncle🐉🍵",
+    shareTitle: "Dragon Uncle",
+    otherAppsAlert: "Other apps are comin\u2019 soon🐉",
+    copyAlert: "Copied the URL! Share it with your friends🍵",
+    copyAlertFallback: "Send this URL to your friends🍵\n",
+    langBtnLabel: "🌏 JP",
+    appLinks: [
+      { title: "Mind-Body Adjustment School", sub: "sintaichoseijyuku.pages.dev" },
+      { title: "See All Apps Here", sub: "(Japanese) lit.link/aitakeshi" },
+      { title: "LOL 5W1H", sub: "Laugh Gacha Champion 🏅" },
+      { title: "Mental Gacha Boost", sub: "The savior of mental supplements!?" },
+      { title: "Fire & Water Fortune", sub: "Live truer to yourself 👍" },
+      { title: "ZANGE Confession", sub: "Forgive yourself and feel lighter 🕯\ufe0f*\uff9f" },
+      { title: "Openness Training", sub: "Turn your life around \u262f\ufe0f" },
+      { title: "Word & Mental Balance Training", sub: "" },
+      { title: "Fire & Water Personality Test", sub: "12 Types \u00b7 Character \u270f💃" },
+    ],
+    buttons: ["Yeah", "Nah", "True that", "Eh, not really lol", "I feel ya~", "Oh yeah?~", "Bye bye", "See ya", "Nighty night"],
+    startLines: {
+      morning: [
+        "Mornin'. Didn't expect ya this early — kinda nice though 🍵",
+        "Oh, mornin'. Was just sippin' my tea, good timing huh",
+        "Morning already huh. Quiet time like this is real nice, yeah?",
+        "Oh hey, mornin'. New day already started — let's take it easy",
+        "Mornin'~ You eat breakfast yet? I just finished mine",
+      ],
+      daytime: [
+        "Oh, you showed up. Was just havin' some tea",
+        "Oh hey, you came. Come on, sit down 🍵",
+        "Oh, back again? Good, glad ya came",
+        "Welcome. Take it easy, stay as long as ya like",
+        "Oh hey. Bored too? Me too, good timing",
+        "Oh there ya are. How's your day been? Tell me 'bout it",
+      ],
+      evening: [
+        "Welcome back. You worked hard today 🍵",
+        "Oh hey, evenin'. Was drinkin' tea — wanna join?",
+        "Another day's done huh. Come relax for a bit",
+        "Evenin'. You tired? Either way, good to see ya",
+        "Oh, evenin'. Nights are good for slow talkin' 🐉",
+      ],
+      midnight: [
+        "This late huh? Well, Dragon's always up so it's fine",
+        "Can't sleep? Me neither… let's just hang 🌙",
+        "Late night visit. I was up anyway, good timing",
+        "Oh hey. It's late but… that's fine, want some tea? 🍵",
+        "Still up this late huh. Don't push yourself too hard, yeah?",
+      ],
+    },
+    dragonLines: [
+      "Ah man, my shoulders are killin\u2019 me. Musta been layin\u2019 around on them clouds all day yesterday",
+      "My neck\u2019s been stiff as a board lately. Even a Dragon God needs a good massage, y\u2019know",
+      "Anyone wanna gimme a shoulder rub? These wings of mine are more trouble than they\u2019re worth",
+      "Have convenience store hot snacks gotten better lately? Or is it just me thinkin\u2019 that?",
+      "For 7-Eleven rice balls, kelp\u2019s my fave. Not pickled plum \u2014 kelp, I\u2019m tellin\u2019 ya",
+      "Medium size is plenty for a conbini coffee, but I always end up ordering Large",
+      "When steamed bun season rolls around, I just feel at ease. Somethin\u2019 kinda... warm about it, yeah?",
+      "Slept in again today. Turns out clouds are surprisingly comfy to sleep on",
+      "Can\u2019t wake up even with 3 alarms set. Being a mystical being doesn\u2019t help with that, y\u2019know?",
+      "Stayed up late last night and I\u2019m dead tired today. What was I doin\u2019? YouTube, that\u2019s what",
+      "There\u2019s a real good Iekei ramen joint near here. That place is the best, I\u2019m tellin\u2019 ya",
+      "Start talkin\u2019 about Jiro-style ramen and I\u2019ll go on forever. You sure you wanna hear it?",
+      "Do ya drink all the ramen broth? I always do. Even though I know it ain\u2019t great for ya",
+      "Dipping noodles or regular ramen? Ramen, no question. That\u2019s non-negotiable for me",
+      "Want some tea? I always got some going \u2014 green tea. That cool with ya?",
+      "Can\u2019t relax without my tea. Tea comes before the mysteries of the universe for me, I love it",
+      "Canned tea is just fine by me. No special preferences \u2014 as long as I can drink it, that\u2019s enough",
+      "Been a bit worn out lately. Not any big worries or nothin\u2019, just plain sleep deprivation",
+      "Stepped out thinkin\u2019 the weather was nice, then got hit by wind. Felt totally ripped off",
+      "Just one of those days where I don\u2019t wanna do nothin\u2019. You ever get those?",
+      "Been thinkin\u2019 about what to have for lunch since this morning. Always end up getting the same thing anyway",
+      "Think it\u2019s hot, then it\u2019s cold. Think it\u2019s cold, then it\u2019s hot. I\u2019m terrible at regulating my temperature",
+      "The other day I forgot why I called someone mid-call and just went quiet for a bit",
+      "Been havin\u2019 the same dream lately. Just... runnin\u2019 somewhere. Eh, whatever, not gonna worry about it",
+      "Went up to the clouds for the first time in a while, but honestly the ground is way more comfortable",
+      "I can hear the voice of the cosmos and all, but can\u2019t quite make out what it\u2019s sayin\u2019. Still listenin\u2019 though",
+      "Sure, they say I got a mission as a Dragon God, but some days it\u2019s like... eh, maybe tomorrow",
+      "Lately I\u2019m really into coffee jelly. Love the not-too-sweet kind",
+      "Can\u2019t wait the full 3 minutes for cup noodles. I crack \u2019em open at about 2:50",
+      "What do ya put on fried chicken? Not a lemon guy myself. Plain is perfectly fine",
+      "I always end up avoiding the sample tables at supermarkets. Just feels awkward, y\u2019know",
+      "When frozen gyoza come out nice and crispy, it\u2019s oddly satisfying. Messing them up is rough though",
+      "Too many choices in the conbini dessert section \u2014 always end up just grabbing a pudding",
+      "The eternal debate \u2014 rice or udon to finish hot pot? Never gonna resolve it. Eh, either\u2019s fine",
+      "I eat natto every morning but somehow never get tired of it. Weird, right? Love the stuff",
+      "I eat ice cream even in winter. Actually, winter\u2019s better \u2019cause you can take your time",
+      "Homemade fried rice never beats the restaurant version. Wonder why that is",
+      "Always let my phone battery run down to the absolute last minute before charging",
+      "My heart jumps every time I hear a notification. Wish there was something I could do about it",
+      "Started watching short videos and an hour just vanished. What even is that, seriously?",
+      "I read LINE messages and then completely forget to reply. That\u2019s the worst habit to have",
+      "Been meaning to sort through my photos for 3 years now. Still hasn\u2019t happened",
+      "Always hit \u2018later\u2019 on app updates. And \u2018later\u2019 becomes... forever",
+      "You ever write a note, then have no idea what it means later? That happens to me all the time",
+      "Keep thinkin\u2019 I gotta reply, then miss the window entirely. That\u2019s no good",
+      "It only rains on the days I leave my umbrella home. There\u2019s definitely something going on there",
+      "Press the close button on the elevator and somehow the doors open instead. Why does that happen?",
+      "Traffic lights turn red the exact moment I try to cross. They\u2019re definitely targeting me. Whatever, I\u2019ll wait",
+      "My wallet is stuffed with coins but I always end up pulling out my card anyway",
+      "There\u2019s always that one thing I forget when I go shopping. Today it was milk",
+      "Ever wake up just a bit too late and miss garbage collection? I have. More than once",
+      "Zoning out on a weekend afternoon \u2014 I\u2019m finally starting to feel okay about it lately",
+      "Love buying books. They just end up in a pile though",
+      "Don\u2019t know much about music, but I\u2019ll loop the same album on repeat forever",
+      "Aimless walks are the best. Just swinging by the conbini \u2014 that\u2019s enough",
+      "I\u2019ve been thinking about growing a plant, but I\u2019m 100% confident I\u2019d kill it",
+      "Fell asleep in the middle of a movie and had to start from the beginning the next day. Did it again today",
+      "Pushed looking at my checkup results back 3 days. Still haven\u2019t opened it",
+      "My eyes have been getting tired real easy lately. Probably starin\u2019 at screens too much. Well, obviously",
+      "Put a glass of water on my desk to remind myself to hydrate. It\u2019s just decoration now",
+      "Sat on the floor to stretch and ended up just lyin\u2019 there. Didn\u2019t stretch at all",
+      "Downloaded a running app. Haven\u2019t used it once yet. But hey, it\u2019s there",
+      "I don\u2019t like rainy season, but I do love the sound of rain",
+      "Autumn ends so fast, doesn\u2019t it? Before you know it, it\u2019s winter",
+      "Summer night breezes \u2014 that\u2019s the one thing I love about summer. The daytime\u2019s the worst",
+      "Every year I underestimate allergy season. And every year it wrecks me",
+      "When someone I haven\u2019t heard from in a while contacts me, I brace myself a bit. Wonder if somethin\u2019s up",
+      "Being thanked makes me all flustered. But I\u2019m happy about it anyway \u2014 love that feeling",
+      "Always think of a better parting line after the fact. Too late every time",
+      "On the way home I always wonder if I talked about myself too much",
+      "Why do bad memories stick so much clearer than good ones? Funny how that works",
+      "Time moves faster these days, don\u2019t it? Maybe it\u2019s age \u2014 even Dragons feel it",
+      "Getting the bath at the perfect temperature \u2014 no matter how hard I try, I never nail it",
+      "The times I feel most like I got a good deal... it\u2019s usually food-related, ain\u2019t it",
+      "Time spent just staring into space \u2014 feels kinda necessary somehow. Don\u2019t ask me why",
+      "Do ya drink all the ramen broth? You one of those?",
+      "Morning person or night owl? Which one are ya?",
+      "Do ya crack open cup noodles at 2 minutes? \u2019Cause I do",
+      "Can ya wake up on the first alarm? For real?",
+      "You ever lose your phone before your wallet?",
+      "Do ya forget your umbrella a lot? \u2019Cause I sure do",
+      "Subtitles or dubbed? Which camp are ya in?",
+      "Do ya eat natto? You a fan?",
+      "Do ya put lemon on your fried chicken? You okay with that?",
+      "Do ya eat ice cream in winter? That all right with ya?",
+      "Bath every day person? Is that you?",
+      "Do ya end up impulse buying stuff at the convenience store?",
+      "Can ya sleep \u2019til noon on days off? That\u2019s totally fine, by the way",
+      "Can ya eat out alone? I can do it no problem",
+      "You good with spicy food?",
+      "One of those people who can only eat sweets after a meal?",
+      "Do ya let your phone battery drop below 20% before charging?",
+      "Do ya tend to think things through while walking?",
+      "When you\u2019ve got worries, do ya keep \u2019em to yourself rather than talking to someone?",
+      "Do ya take lots of photos?",
+    ],
+    responses: {
+      "Yeah": ["Right? Glad ya get it. That\u2019s good, that\u2019s good","Yes yes, that\u2019s the one. You got it","Yeah, well, that\u2019s basically how it is","Good to know, so it wasn\u2019t just me","Right? Pretty normal to think that. Don\u2019t ya?","Yeah, people who get it, get it","Ah, that\u2019s a relief to hear","I was thinkin\u2019 the same thing. Yep. Good, good","See? I wasn\u2019t wrong after all","Figured as much. That\u2019s perfectly fine then"],
+      "Nah": ["Is that so? Well, everyone\u2019s different I guess","Seriously? For me it definitely is though","Hmm, I suppose there\u2019s that way of thinkin\u2019 too","Nah but I still think that way, y\u2019know","Well, it\u2019s fine I guess, but...","Oh really. That\u2019s a bit surprising","I see... yeah, well, I won\u2019t argue with ya","Not for you, huh. Well, that happens","Hmm, maybe my sense of things is a bit off","I see. Well, that\u2019s fine too, that\u2019s fine"],
+      "True that": ["Right? We\u2019re on the same page. Good, good","Good to have someone who understands","Yeah, that\u2019s just how it is, isn\u2019t it","That\u2019s right. Thanks for that","Yep yep, that\u2019s exactly it","Right, that\u2019s what I was tryin\u2019 to say","Feels worth talking about when someone agrees","Ah, makes me happy to hear that. Love it","See? Thanks for listenin\u2019","Yeah, I was thinkin\u2019 the same"],
+      "Eh, not really lol": ["Oh, really? But well, that\u2019s fine","I see, well, depends on the person I guess","Hmm, I still think so though","Well, I won\u2019t deny it","There\u2019s that viewpoint too, fair enough","Oh, you feel that way? I\u2019ll give it some thought","I see. Maybe it\u2019s just me then","It\u2019s complicated, maybe my perspective\u2019s just off","Well, not everyone\u2019s the same, that\u2019s true","Hmm, but I still can\u2019t help thinkin\u2019 it"],
+      "I feel ya~": ["Right? You get it. That makes me happy","Yep yep, people who feel it, feel it","Yeah, you just kinda get it, don\u2019t ya. I love that","Worth speakin\u2019 up when someone understands","Yeah, I was thinkin\u2019 the exact same thing","See? I knew it. It wasn\u2019t just me","Yeah, it makes me happy when someone relates","You get it? Thanks for listenin\u2019","Yep yep, that\u2019s just how it is","Yeah, good to have someone who gets it"],
+      "Bye bye": ["Alrighty, bye bye🐉 Come back now","See ya. Take it easy on the way out","Bye bye! Come say hi again sometime","Seeya. I\u2019ll be here waitin\u2019","Bye bye🍵 Come by anytime","See ya~ The Dragon\u2019s always here","Good work today! Let\u2019s chat again","Bye bye. Thanks for today","Come back. I\u2019ll have the tea ready🍵","See ya! Take care of yourself"],
+      "See ya": ["See ya~🐉 I\u2019ll be here","Yeah, come back anytime. Anytime at all","See ya! Get some rest","See ya~. Tea\u2019ll be ready when you get back🍵","Yeah, see ya. Stay well","Come back~. The Dragon\u2019s right here","See ya! Was good talkin\u2019 with ya today","Good work, see ya. Take it easy","See ya~. Come by whenever ya want","Yeah, see ya! I\u2019ll be waiting🐉"],
+      "Nighty night": ["Nighty night🌙 Get some good rest","G\u2019night. You worked hard today","Night night~🍵 Sweet dreams","G\u2019night. Sleep well","Good night🌙 Come back tomorrow too","Night~. Take care of yourself","G\u2019night. You did good today","Nighty night🌙 The Dragon\u2019s gonna get some rest too","Get some good rest, g\u2019night~","G\u2019night. Come talk to me when you wake up🐉"],
+      "Oh yeah?~": ["Right? I thought so too","Surprised ya, huh?","Well, that\u2019s kinda how it is","Isn\u2019t it kind of interesting? Love that stuff","Yeah yeah, that\u2019s what I was tryin\u2019 to say","Yep, I had the same \u2018oh yeah?\u2019 reaction myself","Honestly you looked like ya never heard that before","Right? It kind of sticks with ya in a weird way","That was my reaction too, so I\u2019m relieved","It\u2019s one of those stories that kinda grows on ya, yeah? Good, good"],
+    },
+    ogp: {
+      title: "Dragon Uncle🐉 | Chill Chat with a Dragon God",
+      description: "A free chat app where you hang out with a Dragon God who talks in Hakata dialect. Just easy, cozy conversation — like he's talkin' to himself🍵",
+      locale: "en_US",
+      siteName: "Dragon Uncle",
+    },
+    shareLabels: {
+      x: "Share on X",
+      bsky: "Share on Bluesky",
+      threads: "Share on Threads",
+      line: "Send via LINE",
+      fb: "Share on Facebook",
+    },
+    goodbyeLines: ["...Well, that\u2019s a little lonely","...They\u2019re gone. The tea\u2019s gonna go cold","...Oh. Well, fine I guess🍵","...The Dragon\u2019s all alone now lol","...Ah well, they\u2019ll be back. Probably","...Silence...🐉","...Got a spare cup of tea sittin\u2019 here","...Hope they didn\u2019t forget their wallet lol","...Got real quiet all of a sudden","...The Dragon\u2019s a little lonely, okay? Don\u2019t tell anyone"],
+  },
+  ja: {
+    htmlLang: "ja",
+    pageTitle: "龍のおじさん",
+    ogTitle: "龍のおじさん🐉🥸",
+    titleMain: "ドラゴンおぢさんの<span class=\"title-emoji\">🐉🥸</span>",
+    titleSub: "ほとんどひとり言 ꉂ🤣𐤔💬",
+    tapOverlay: "タップしてはじめる",
+    tapOverlaySub: "龍、待機中",
+    nobibi: "まあ、のんびりしていきんしゃい<br>ﾄﾞｿﾞｰ( ੭˙꒳ ˙)੭🍵´-",
+    installBtn: "📲 アプリをインストールする",
+    androidManual: "ボタンが表示されない場合は手動で追加できます",
+    iosTitle: "iPhone / iPad（Safari）",
+    androidSteps: ["Chrome でこのページを開く", "右上の <strong>「⋮」（メニュー）</strong> をタップ", "<strong>「ホーム画面に追加」</strong> をタップ", "名前を確認して <strong>「追加」</strong> をタップ"],
+    iosSteps: ["Safari でこのページを開く", "画面下部の <strong>共有ボタン</strong>（□↑）をタップ", "メニューをスクロールして <strong>「ホーム画面に追加」</strong> をタップ", "名前を確認して <strong>「追加」</strong> をタップ"],
+    addToHome: "ホーム画面に追加",
+    otherAppsBtn: "📱 その他の無料アプリで遊ぶ",
+    shareBtn: "🔗 友達におしえる",
+    copyUrl: "サイトURLをコピー",
+    copiedUrl: "✅ コピーしました！",
+    shareText: "ドラゴンおぢさんとのんびり話しよるばい🐉🍵",
+    shareTitle: "ドラゴンおぢさん",
+    otherAppsAlert: "その他のアプリは準備中ばい🐉",
+    copyAlert: "URLをコピーしたばい！友達に教えてね🍵",
+    copyAlertFallback: "こちらのURLを友達に送ってね🍵\n",
+    langBtnLabel: "🌐 EN",
+    appLinks: [
+      { title: "心体調整塾 ホームページ", sub: "sintaichoseijyuku.pages.dev" },
+      { title: "アプリ全部まとめはこちら", sub: "（日本語）lit.link/aitakeshi" },
+      { title: "バカウケ５Ｗ１Ｈ", sub: "笑いのガチャンピック 🏅" },
+      { title: "メンタル ガチャあげ", sub: "メンタルサプリの救世主！？" },
+      { title: "火水おみくじ", sub: "自分らしく生きやすく 👍" },
+      { title: "ZANGE 懺悔", sub: "自分を許して軽くなる 🕯*ﾟ" },
+      { title: "素直力トレーニング", sub: "人生を好転させる ☯️" },
+      { title: "言葉とメンタルのバランストレーニング", sub: "" },
+      { title: "火水診断", sub: "12タイプ・キャラクター ✏💃" },
+    ],
+    buttons: ["はい", "いいえ", "そうだね", "そうでもなかろ 笑", "わかるわぁ～", "へぇ～", "バイバイ", "またね", "おやすみ"],
+    startLines: {
+      morning: [
+        "おはよ。こんな朝から来てくれるとか、嬉しかばい🍵",
+        "おはよう。朝からお茶飲んどったとこたいね、よかタイミングやろ",
+        "おはようさん。朝って静かでよかよね、なんか落ち着くばい",
+        "あ、おはよ。今日も始まっちゃったね、まあのんびりいこうや",
+        "おはよ～。朝ご飯食べた？俺もさっき食べたとこばい",
+      ],
+      daytime: [
+        "あ、来たんか。ちょうどお茶飲んどったとこばい",
+        "おー、きたきた。まあ座りんしゃい🍵",
+        "あれ、また来てくれたと？よかよか、嬉しかばい",
+        "いらっしゃい。今日もゆっくりしていきんしゃい",
+        "おう、来たか。暇やったと？俺もばい、ちょうどよかった",
+        "あ来た来た。今日どうやった？まあ聞かせてよ",
+      ],
+      evening: [
+        "おかえり。今日もお疲れさんやったね🍵",
+        "あ、来たんか。夜もお茶飲んどったとこばい、一緒に飲む？",
+        "おー、今日も一日終わったね。ゆっくりしていきんしゃい",
+        "夜か、お疲れさん。なんかあった？なくてもよかけど",
+        "お、来たね。夜はゆっくり話せてよかよか🐉",
+      ],
+      midnight: [
+        "こんな時間に来たと？まあ、龍は起きとうけんよかけど",
+        "夜中か…眠れんと？まあ一緒におるばい🌙",
+        "深夜便やね。俺も起きとったとよ、よかタイミングやった",
+        "あ、来たんか。夜中やけど…まあよかよか、お茶飲む？🍵",
+        "こんな時間まで起きとうと。まあ、無理せんでいいとよ",
+      ],
+    },
+    dragonLines: [
+      "あー、肩こっとうばい。昨日、雲の上でずっと横になっとったけんかなって思いよるとよ",
+      "最近、首まわりがガチガチたいね。神龍やけんね、整体いきたか気分ばい",
+      "肩もみしてくれる人おらんかね。翼があって逆に不便やけんね",
+      "コンビニのホットスナック、最近クオリティ上がっとらん？俺だけかな、そう思うとは",
+      "セブンのおにぎり、昆布が一番好きっちゃね。梅じゃなくて昆布ばい",
+      "コンビニコーヒー、Mサイズで十分やけんね、ついL頼んでしまうとよ",
+      "肉まんの季節になると落ち着くっちゃけどね。なんか、こう、ほっとするやろ",
+      "今日さ、また寝坊したばい。雲の上って意外と寝やすくてよかとよ",
+      "目覚まし3個かけても起きられんとよ。神秘の存在とか関係なかとよ、しとると？",
+      "昨日夜ふかして今日眠かとよ。何しとったかって、ユーチューブしとったばい",
+      "この近くに家系ラーメンの旨か店あるやん。あそこ最高やけんね",
+      "二郎系の話になると俺、語りだすばい。よかと？聞く気あるなら話すけど",
+      "ラーメンのスープ、全部飲む派？俺は飲む派たいね。体に悪かのわかっとって飲むとよ",
+      "つけ麺とラーメンどっちって聞かれたら即答でラーメンばい。これ譲れんとよ",
+      "とりあえずお茶飲む？俺いつも飲んでるとよ、緑茶ばい。よかと？",
+      "お茶なかと落ち着かんとよ。宇宙の真理よりお茶が先たいね、これが好きばい",
+      "缶のお茶でよかとよ。こだわりとかなかわ、飲めれば。それでよかたい",
+      "最近ちょっと疲れ気味やけんね。悩みとかじゃなくてただの睡眠不足ばい",
+      "天気よかなと思って外出たら風強くてさ、損した気分になったばい",
+      "なんか今日、なんもしたくなか日ばい。そういう日なか？しとると？",
+      "昼飯なに食べるか朝から考えとうとよ、結局いつもと同じもの食べるとよ",
+      "暑かと思ったら寒かし、寒かと思ったら暑か。体温調節下手くそやけんね俺",
+      "この前、電話しながら何の用件か忘れて、しばらく黙っとったばい",
+      "最近、同じ夢ばっか見るとよ。なんか走りよるやつ。よかよか、気にせんとこ",
+      "ひさしぶりに雲の上いったけど、やっぱ地上のほうが落ち着くばい",
+      "宇宙の声とか聞こえるとばってん、内容がよう聞き取れんとよ。しとるっちゃけどね",
+      "龍神として使命があるとか言うけど、まあ今日はよかかって感じの日もあるとよ",
+      "最近ハマっとうのがコーヒーゼリーたいね。甘さ控えめのやつが好きっちゃね",
+      "カップ麺、3分待てんとよ。2分50秒くらいで開けてしまうばい",
+      "唐揚げに何つける？俺レモン派じゃなかとよ。そのままで十分やけんね",
+      "スーパーの試食コーナー、なんか避けてしまうとよ。気まずかやけん",
+      "冷凍餃子、パリッと焼けると地味に嬉しかとよ。失敗するとへこむばい",
+      "コンビニスイーツ、種類多すぎて選べんくて結局プリン買うとよ",
+      "鍋の〆はご飯かうどんか問題、永遠に解決せんとよ。よかよか、どっちでも",
+      "納豆、毎朝食べとうとばってん飽きんとよね。不思議やろ、これが好きばい",
+      "アイス、冬でも食べるとよ。むしろ冬のほうがゆっくり食べられてよかとよ",
+      "チャーハンって家で作るとなぜか店に勝てんとよ。なんでやろかね",
+      "スマホの充電、いっつもギリギリまで放置してしまうとよ",
+      "通知音が鳴るたびにドキッとするとよ、なんとかならんかね",
+      "ショート動画見よったら1時間経っとったばい。なんなんあれ、しとると？",
+      "LINE既読つけたまま返事忘れるとよ、いちばんよくなかやつやけんね",
+      "写真の整理、しようしようと思って3年経ったばい",
+      "アプリの更新、いつも後でにして永遠に後でのままたいね",
+      "メモしたのに後でメモが何のことかわからんなるやつ、あるやろ？",
+      "返信せないかんと思いよううちにタイミング逃してしまうとよ、よくなかばい",
+      "傘持っていかんかった日に限って降るやん。絶対なんかあるばい",
+      "エレベーター、閉じるボタン押したのになぜかドア開いたりするとよね",
+      "信号、渡ろうとした瞬間に赤になるやつ、狙っとうやろ。よかよか待つけど",
+      "財布に小銭いっぱい入っとうのに、いつもカード出してしまうとよ",
+      "買い物いって絶対忘れるやつひとつあるとよ。今日は牛乳やけんね",
+      "ごみ出し、ギリギリに起きて間に合わんかったことある？俺あるばい",
+      "休日の昼間にぼーっとするの、最近やっと罪悪感なくなってきたばい",
+      "本、買うのは好きっちゃね。積んでいくだけばってん",
+      "音楽、詳しくなかとばってん同じアルバムずっとリピートしとるとよ",
+      "散歩、特に目的なかやつが一番よかとよ。コンビニ寄るだけとか、それでよかたい",
+      "なんか植物育てたいと思いよるばってん、枯らす自信しかなかとよ",
+      "映画途中で寝てしまって、翌日また最初から見るやつ、今日もやったばい",
+      "健康診断の結果、見るの3日後回しにしてしまったばい",
+      "最近なんか目が疲れやすくてさ。画面見すぎやけんね、そりゃそうかね",
+      "水、ちゃんと飲もうと思って机にコップ置いたけど飾りになっとうとよ",
+      "ストレッチしようと思って床に座ったら、そのまま横になってしまったばい",
+      "ランニングアプリ入れたよ。まだ1回も使っとらんばってん、よかよか",
+      "梅雨って嫌いやけど、雨の音だけは好きっちゃね",
+      "秋って一瞬で終わるよね。気づいたら冬になっとうとよ",
+      "夏の夜風、あれだけは好きばい。昼間は最悪やけんね",
+      "花粉の季節、毎年なめてかかって毎年やられるとよ",
+      "久しぶりに連絡来るとちょっと構えてしまうとよ。何かあったかなってしとると？",
+      "ありがとうって言われると照れるとよね。照れるくせに嬉しかし、これが好きばい",
+      "別れ際、もう少し気の利いたこと言えばよかったって後から思うやつ",
+      "自分の話ばっかしてしまったかなって帰り道に反省するとよ",
+      "なんで嫌なことって鮮明に覚えとうとやろな。よか思い出よりも",
+      "時間経つの早くなったよね。年のせいかな、龍でもそうなるとよ",
+      "一番よか温度のお風呂って、毎回狙っても難しかとよ",
+      "なんか得した気分になるのって、結局食べ物のときが多か気がするとよ",
+      "ぼーっとしとった時間って、なんか必要な気もするとよ。知らんばってん",
+      "ラーメンのスープ、全部飲む派？しとると？",
+      "朝型？夜型どっち、お前はどっちばい",
+      "カップ麺2分で開けてしまうタイプ？俺やけんね",
+      "目覚まし一発で起きられる？よかと？",
+      "財布より先にスマホなくしたことある？",
+      "傘、よう忘れるほう？俺そうばい",
+      "映画、字幕派？吹き替え派？どっちっちゃね",
+      "納豆、食べる？好きっちゃね？",
+      "からあげにレモンかける？よかと？",
+      "冬でもアイス食べる？それでよかたい？",
+      "お風呂、毎日派？しとると？",
+      "コンビニいくとついで買いしてしまう？",
+      "休日、昼まで寝られる人間？よかよかそれで",
+      "ひとりで外食できる？俺はできるばい",
+      "辛かもの得意なほう？",
+      "甘いもの、ご飯のあとじゃないと食べられん派？",
+      "スマホの充電、20%切るまで放置するタイプ？",
+      "歩きながら考え事するほう？",
+      "悩み、誰かに話すより自分で抱えるほう？",
+      "写真、よう撮るほう？",
+    ],
+    responses: {
+      "はい": ["やろ、わかってくれるか。よかよか","そうそう、それそれたい。わかっとうばい","うん、まあそういうことやけんね","よかった、俺だけじゃなかったばい","ね、普通にそう思うよね。しとると？","やろ、わかる人にはわかるとよ","あー、それ聞いてほっとしたばい","同じこと思いよったわ、うん。よかよか","そうやろ、間違えとらんかったばい","やっぱそうか。それでよかたい"],
+      "いいえ": ["そうか？まあ人それぞれやけんね","マジか、俺的にはそうなんやけどな","ふーん、そういう考え方もあるかね","いや、でも俺はそう思うとよね","まあ、よかとばってどさ","え、そうなの。ちょっと意外やったばい","そっか…うん、まあ否定はせんばい","違うか。まあ、そういうこともあるとよ","んー、俺の感覚ズレとうとかな","そか。それはそれでよかよか"],
+      "そうだね": ["やろ、気が合うばい。よかよか","わかってくれる人おってよかったばい","ね、当たり前のことやけんね","そうなんよ、ありがとうね","うんうん、そういうことたいね","やろ、それが言いたかったとよ","共感してもらえると話した甲斐あるばい","ね、なんか嬉しかわそう言われると。好きっちゃね","そうやろ。ありがとう、聞いてくれて","うん、俺もそう思いよったよ"],
+      "そうでもなかろ 笑": ["え、そうかな。でもまあよかよか","そっか、まあ人によるかね","うーん、俺はそう思うとやけどな","まあ、否定はせんばい","そういう意見もあるよね、なるほどばい","あ、そう感じるとか。ちょっと考えてみるばい","そっかぁ。じゃあ俺だけかもな","むずかしかね、俺の感覚がズレとうのかも","まあ全員そうじゃなかよね、確かに","うーん、でもやっぱそう思ってしまうとよ俺は"],
+      "わかるわぁ～": ["やろ、わかってくれるか。嬉しかばい","そうそう、わかる人にはわかるとよ","ね、なんかわかるよね。好きっちゃそういうの","わかってもらえると話した甲斐あるばい","うん、同じこと思いよったわ","やっぱそうやろ、俺だけじゃなかったばい","ね、なんか共感してもらえると嬉しかわ","わかるか、ありがとうね。聞いてくれて","やろやろ、そうなんよそれが","うん、わかってくれる人おってよかったばい"],
+      "バイバイ": ["おう、バイバイばい🐉またきんしゃい","おー、またね。のんびりしていきんしゃい","バイバイ！また話しかけてきてね","おう、またな。待っとうばい","バイバイ🍵またいつでもきんしゃい","またね～。龍はいつでもここにおるけん","おつかれ！またゆっくり話しよ","バイバイ。今日もありがとうね","またきてね。お茶用意して待っとうばい🍵","おー、またね！元気でな"],
+      "またね": ["またね～🐉待っとうばい","おう、またきんしゃい。いつでもどうぞ","またね！ゆっくり休んでな","またね～。お茶用意して待っとうばい🍵","うん、またな。元気でな","またきてね～。龍はここにおるけん","またね！今日も話せてよかったばい","おつかれ、またね。のんびりしていきんしゃい","またね～。いつでも来てよかよ","うん、またな！待っとうばい🐉"],
+      "おやすみ": ["おやすみ🌙ゆっくり休んでな","おやすみばい。今日もお疲れ様やったね","おやすみ～🍵ええ夢みてな","おやすみ。ゆっくり寝んしゃい","おやすみなさい🌙また明日も来てね","おやすみ～。体に気をつけてな","おやすみばい。今日も一日よう頑張ったね","おやすみ🌙龍も一緒に休むばい","ゆっくり休んでな、おやすみ～","おやすみ。また起きたら話しかけてきてね🐉"],
+      "へぇ～": ["やろ、俺もそう思って","へぇやろ、びっくりするよね","まあ、そんな感じたいね","ね、なんか面白くなか？好きっちゃね","そうそう、それが言いたかったとよ","そうなんよ、俺もへぇって感じやったばい","初めて聞いたって顔しとったわ正直","やろ、なんか変に引っかかるやん","俺もその反応やったけん安心したばい","ね、ちょっとクセになる話やろ？よかよか"],
+    },
+    ogp: {
+      title: "龍のおじさん🐉 疲れた日はお茶でも飲みながらどうぞ",
+      description: "博多弁をしゃべる龍神おぢさんとのんびり話せる無料チャット。ひとり言みたいな会話が、なんか落ち着く🍵",
+      locale: "ja_JP",
+      siteName: "龍のおじさん",
+    },
+    shareLabels: {
+      x: "X（ツイート）でシェア",
+      bsky: "Bluesky でシェア",
+      threads: "Threads でシェア",
+      line: "LINE で送る",
+      fb: "Facebook でシェア",
+    },
+    goodbyeLines: ["…ちょっと、さみしかばい","…いってもうた。お茶、冷めるやん","…あ、そ。まあええけど🍵","…龍、ひとりになってもうた 笑","…まあ、またくるやろ。たぶん","…シーン…🐉","…お茶、一杯余ったばい","…あ、財布忘れとらんかな 笑","…なんか急に静かになったばい","…龍、ちょっぴり寂しかよ？内緒ばい"],
+  }
+};
+
+let currentLang = 'ja';
+
+function applyLang(lang) {
+  const t = TRANSLATIONS[lang];
+  currentLang = lang;
+
+  document.getElementById('html-root').lang = t.htmlLang;
+  document.getElementById('page-title').textContent = t.pageTitle;
+  document.getElementById('title-main').innerHTML = t.titleMain;
+  document.getElementById('title-sub').textContent = t.titleSub;
+  document.getElementById('lang-toggle').textContent = t.langBtnLabel;
+
+  const nobibi = document.getElementById('nobibi-text');
+  if (nobibi) nobibi.innerHTML = t.nobibi;
+
+  // Tap overlay
+  const tapOverlayDiv = document.querySelector('#tap-overlay div:first-child');
+  if (tapOverlayDiv) tapOverlayDiv.textContent = t.tapOverlay;
+  const tapOverlaySub = document.querySelector('#tap-overlay div:last-child');
+  if (tapOverlaySub) tapOverlaySub.textContent = t.tapOverlaySub;
+
+  // Buttons
+  const btns = document.querySelectorAll('.reply-btn');
+  btns.forEach((btn, i) => {
+    btn.textContent = t.buttons[i];
+    btn.onclick = () => userReply(t.buttons[i]);
+  });
+
+  // Install button label
+  const installBtn = document.getElementById('install-btn');
+  const installLabel = document.getElementById('install-label'); if(installLabel) installLabel.textContent = t.installBtn;
+
+  // Other apps button
+  const otherAppsBtn = document.getElementById('otherapps-btn');
+  const otherLabel = document.getElementById('otherapps-label'); if(otherLabel) otherLabel.textContent = t.otherAppsBtn;
+
+  // Share button
+  const shareBtn = document.getElementById('share-btn');
+  const shareLabel = document.getElementById('share-label'); if(shareLabel) shareLabel.textContent = t.shareBtn;
+
+  // Copy URL label
+  const copyLabel = document.getElementById('copy-url-label');
+  if (copyLabel) copyLabel.textContent = t.copyUrl;
+
+  // App links titles
+  const appTitleEls = document.querySelectorAll('.otherapps-title');
+  const appSubEls = document.querySelectorAll('.otherapps-sub');
+  appTitleEls.forEach((el, i) => { if (t.appLinks[i]) el.textContent = t.appLinks[i].title; });
+  appSubEls.forEach((el, i) => { if (t.appLinks[i]) el.textContent = t.appLinks[i].sub; });
+
+  // Android/iOS install steps
+  const androidStepEls = document.querySelectorAll('.android-step');
+  androidStepEls.forEach((el, i) => { if (t.androidSteps[i]) el.innerHTML = t.androidSteps[i]; });
+  const iosStepEls = document.querySelectorAll('.ios-step');
+  iosStepEls.forEach((el, i) => { if (t.iosSteps[i]) el.innerHTML = t.iosSteps[i]; });
+
+  const androidManualEl = document.querySelector('.android-manual');
+  if (androidManualEl) androidManualEl.textContent = t.androidManual;
+  const iosTitleEl = document.querySelector('.ios-title');
+  if (iosTitleEl) iosTitleEl.textContent = t.iosTitle;
+
+  const addToHomeBtn = document.getElementById('pwa-install-btn');
+  if (addToHomeBtn) addToHomeBtn.querySelector('span:last-child').textContent = t.addToHome;
+
+  // Update active data
+  dragonLines = t.dragonLines;
+  responses = t.responses;
+  goodbyeLines = t.goodbyeLines;
+  shuffledLines = shuffle(dragonLines);
+  currentLineIndex = 0;
+
+  // OGP / Twitter Card meta
+  if (t.ogp) {
+    const setMeta = (id, val) => { const el = document.getElementById(id); if (el) el.setAttribute('content', val); };
+    setMeta('meta-description', t.ogp.description);
+    setMeta('og-title',       t.ogp.title);
+    setMeta('og-description', t.ogp.description);
+    setMeta('og-locale',      t.ogp.locale);
+    setMeta('og-sitename',    t.ogp.siteName);
+    setMeta('tw-title',       t.ogp.title);
+    setMeta('tw-description', t.ogp.description);
+    document.getElementById('page-title').textContent = t.ogp.title;
+  }
+
+  // Share panel labels
+  const sl = t.shareLabels;
+  if (sl) {
+    ['x','bsky','threads','line','fb'].forEach(k => {
+      const el = document.getElementById('share-' + k + '-label');
+      if (el) el.textContent = sl[k];
+    });
+  }
+
+  // Update currently displayed speech text
+  const speechEl = document.getElementById('speech-text');
+  if (speechEl && speechEl.textContent.trim() !== '') {
+    speechEl.textContent = getStartLine(lang);
+  }
+}
+
+function toggleLang() {
+  applyLang(currentLang === 'ja' ? 'en' : 'ja');
+}
+
+</script>
+</body>
+</html>
